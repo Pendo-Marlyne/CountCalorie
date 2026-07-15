@@ -6,6 +6,9 @@ Configured for PostgreSQL with environment variable support for production deplo
 
 import os
 from pathlib import Path
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -73,11 +76,11 @@ WSGI_APPLICATION = "countcalorie.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": os.environ.get("DB_NAME", "calorie_counter_db"),
-        "USER": os.environ.get("DB_USER", "postgres"),
-        "PASSWORD": os.environ.get("DB_PASSWORD", "postgres"),
-        "HOST": os.environ.get("DB_HOST", "localhost"),
-        "PORT": os.environ.get("DB_PORT", "5432"),
+        "NAME": "calorie_counter_db",
+        "USER" : "postgres",
+        "PASSWORD": "2008",
+        "HOST" : "localhost",
+        "PORT" : "5432",
     }
 }
 
